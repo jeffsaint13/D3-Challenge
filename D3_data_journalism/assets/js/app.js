@@ -25,7 +25,7 @@ var chartGroup = svg.append("g")
     .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from data.csv
-d3.csv("../assets/data/data.csv").then(function(journalData) {
+d3.csv("assets/data/data.csv").then(function(journalData) {
     journalData.poverty = +journalData.poverty;
     journalData.healthcare = +journalData.healthcare;
     return journalData;
@@ -83,7 +83,7 @@ var toolTip = d3.tip()
   .attr("class", "tooltip")
   .offset([-10, 40])
   .html(function(d) {
-    return (`${d.abbr}<br>Healthcare (%): ${d.healthcare}%<br>Poverty: ${d.poverty} (%)`);
+    return (`${d.abbr}<br>Healthcare: ${d.healthcare}%<br>Poverty: ${d.poverty}%`);
   });
 
 // Create tooltip in the chart
